@@ -6,12 +6,13 @@ import router from './router'
 import { Button, Header, Search, cell, InfiniteScroll } from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import store from './store/store'
-import 'vant/lib/vant-css/index.css'
+import jsonp from 'vue-jsonp'
 Vue.component(Button.name, Button)
 Vue.component(Header.name, Header)
 Vue.component(Search.name, Search)
 Vue.component(cell.name, cell)
 Vue.use(InfiniteScroll)
+Vue.use(jsonp)
 
 Vue.config.productionTip = false
 

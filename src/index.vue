@@ -54,6 +54,11 @@ export default {
     }
   },
   created () {
+    this.$jsonp('https://douban.uieee.com/v2/movie/top250').then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
     network.request({
       url: '/in_theaters',
       success: res => {
@@ -61,10 +66,10 @@ export default {
         this.sildeList = res.data.subjects
       }
     })
-    // axios.get('/douban/in_theaters').then(res => {
-    //   res.data.subjects.splice(6)
-    //   this.sildeList = res.data.subjects
-    // })
+    axios.get('/douban/in_theaters').then(res => {
+      res.data.subjects.splice(6)
+      this.sildeList = res.data.subjects
+    })
   }
 }
 </script>
